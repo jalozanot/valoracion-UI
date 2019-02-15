@@ -1,0 +1,120 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header ">
+                        <h4 class="card-title">Registro</h4>
+                        <br/>
+                        <br/>
+                        <p class="card-category">Datos del Propietario</p>
+                    </div>
+                    <form>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Numero de placa" name="placa" id="placa" [(ngModel)]="parking.numPlacaDTO" type="text">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Cilidraje" type="text" name="cilidraje" [(ngModel)]="parking.cilindrajeDTO">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field>
+                                        <select matNativeControl placeholder="Tipo Vehiculo" name="tipo" [(ngModel)]="parking.tipovehiculoDTO">
+                                          <option value="MOTO">MOTO</option>
+                                          <option value="CARRO">CARRO</option>
+                                        </select>
+                                      </mat-form-field>
+                                </div>
+                            </div>
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="enviarRegistro()">Enviar datos</button>
+
+
+                        </div>
+                       
+
+                    </form>
+                    <br>
+                    <form>
+                        <div >
+
+                            <table mat-table [dataSource]="dataSource" >
+
+                                
+                                <ng-container matColumnDef="idParking">
+                                  <th mat-header-cell *matHeaderCellDef> No. </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.idParkingDTO}} </td>
+                                </ng-container>
+                              
+                                <!-- Name Column -->
+                                <ng-container matColumnDef="fechaIngreso">
+                                  <th mat-header-cell *matHeaderCellDef> fechaIngreso </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.fechaIngresoDTO | date}} </td>
+                                </ng-container>
+                              
+                                <!-- Weight Column -->
+                                <ng-container matColumnDef="fechaSalida">
+                                  <th mat-header-cell *matHeaderCellDef> fechaSalida </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.fechaSalidaDTO | date}} </td>
+                                </ng-container>
+                              
+                                <!-- Symbol Column -->
+                                <ng-container matColumnDef="tarifa">
+                                  <th mat-header-cell *matHeaderCellDef> tarifa </th>
+                                  <td mat-cell *matCellDef="let element"> {{element.tarifaDTO}} </td>
+                                </ng-container>
+ 
+                                <ng-container matColumnDef="idVigilante">
+                                    <th mat-header-cell *matHeaderCellDef> idVigilante </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.idVigilanteDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="numPlaca">
+                                    <th mat-header-cell *matHeaderCellDef> numPlaca </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.numPlacaDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="cilindrajeVehiculo">
+                                    <th mat-header-cell *matHeaderCellDef> cilindrajeVehiculo </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.cilindrajeVehiculoDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="tipoVehiculo">
+                                    <th mat-header-cell *matHeaderCellDef> tipoVehiculo </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.tipoVehiculoDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="puesto">
+                                    <th mat-header-cell *matHeaderCellDef> puesto </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.puestoDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="estado">
+                                    <th mat-header-cell *matHeaderCellDef> estado </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.estadoDTO}} </td>
+                                  </ng-container>
+
+                                  <ng-container matColumnDef="accion">
+                                    <th mat-header-cell *matHeaderCellDef> accion </th>
+                                    <td mat-cell *matCellDef="let element"> <button mat-raised-button type="submit" class="btn btn-danger pull-right" (click)="registrarSalida(element)">salida</button> </td>
+                                  </ng-container>
+
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                              </table>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

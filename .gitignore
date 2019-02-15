@@ -1,0 +1,78 @@
+/credito-digital.7z
+### Eclipse ###
+/.metadata/
+.metadata
+.gradle
+/credito-digital-ui-ear/bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.prefs
+Servers/
+.project
+.externalToolBuilders/
+*.launch
+.tern-project
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# JRebel plugin
+rebel.xml
+rebel-remote.xml
+
+# PMD plugin
+.pmd
+
+
+### Java ###
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+### Maven ###
+target/
+test-output/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+build.properties
+release.properties
+nbproject/
+**/app/dist/
+node_modules/
+
+## intellij projects
+*.iml
+.idea/
+.sonarlint/
+.recommenders/
+
+.project
+/credito-digital-rest/src/main/java/co/gov/fna/credito/digital/model/hibernate.reveng.xml
+EARs/
+credito-digital-web-ui/src/main/webapp/dist/
+package-lock.json
+.angulardoc.json
+credito-digital-admin-ui/src/main/
+credito-digital-ui/src/main/
